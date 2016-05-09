@@ -14,27 +14,27 @@ public class InflateString {
 		// TODO Auto-generated method stub
 		try {
 
-			// Encode a String into bytes
-			String inputString = "String compactada pela QuaZIP";
-			byte[] input = inputString.getBytes("UTF-8");
-			System.out.println("input: " + Hex.encodeHexString(input));
+//			// Encode a String into bytes
+//			String inputString = "String compactada pela QuaZIP";
+//			byte[] input = inputString.getBytes("UTF-8");
+//			System.out.println("input: " + Hex.encodeHexString(input));
+//
+//			// Compress the bytes
+//			byte[] output = new byte[2048];
+//			Deflater compresser = new Deflater();
+//			compresser.setInput(input);
+//			compresser.finish();
+//			int compressedDataLength = compresser.deflate(output);
+//			System.out.println("output: " + Hex.encodeHexString(output));
 
-			// Compress the bytes
-			byte[] output = new byte[2048];
-			Deflater compresser = new Deflater();
-			compresser.setInput(input);
-			compresser.finish();
-			int compressedDataLength = compresser.deflate(output);
-			System.out.println("output: " + Hex.encodeHexString(output));
-
-//			Path path = Paths.get("D:/string_de_teste_compactada.zip");
-//			byte[] data = Files.readAllBytes(path);
-//			System.out.println("data: " + Hex.encodeHexString(data));
+			Path path = Paths.get("string_de_teste_compactada.qzip");
+			byte[] data = Files.readAllBytes(path);
+			System.out.println("data: " + Hex.encodeHexString(data));
 
 			// Decompress the bytes
 			Inflater decompresser = new Inflater();
-			decompresser.setInput(output, 0, compressedDataLength);
-//			decompresser.setInput(data, 0, data.length);
+//			decompresser.setInput(output, 0, compressedDataLength);
+			decompresser.setInput(data, 0, data.length);
 			byte[] result = new byte[2048];
 			int resultLength = decompresser.inflate(result);
 			decompresser.end();
