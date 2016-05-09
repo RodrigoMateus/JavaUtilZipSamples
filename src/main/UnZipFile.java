@@ -13,7 +13,7 @@ import java.util.zip.ZipInputStream;
 public class UnZipFile {
 
 	List<String> fileList;
-	private static final String INPUT_ZIP_FILE = "D:/test.zip";
+	private static final String INPUT_ZIP_FILE = "D:/string_de_teste_compactada.zip";
 	private static final String OUTPUT_FOLDER = "D:";
 
 	public static void main(String[] args) {
